@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AimerController;
 use App\Http\Controllers\DasboardController;
+use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,10 @@ Route::get('/', function () {
     return view('accueil');
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 Route::get('/accueil', function () {
     return view('accueil');
 });
@@ -27,6 +32,9 @@ Route::get('/accueil', function () {
 Route::get('/',[DasboardController::class,'index'])->name('accueil');
 
 Route::get('/like/{id_article}/{id_user}',[AimerController::class,'index'])->middleware(['auth', 'verified'])->name('like');
+Route::get('/like_event/{code}/{id_user}',[AimerController::class,'indexEvent'])->middleware(['auth', 'verified'])->name('like_event');
+
+Route::get('/evenement/{nom}',[EvenementController::class,'index'])->middleware(['auth', 'verified'])->name('like');
 
 Route::get('/dashboard', function () {
     return view('accueil');

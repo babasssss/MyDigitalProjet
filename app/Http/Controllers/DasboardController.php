@@ -40,8 +40,12 @@ class DasboardController extends Controller
                 ->select('aimer.*')
                 ->where('aimer.id',Auth::user()->id)
                 ->get();
+            $_Aimers = DB::table('_aimer')
+                ->select('_aimer.*')
+                ->where('_aimer.id',Auth::user()->id)
+                ->get();
             // dd($Aimer);
-            return view('accueil',['evenements'=>$Evenements,'articles'=>$Articles, 'tabCategorie'=>$tabCategorie,'Aimers'=>$Aimers]);
+            return view('accueil',['evenements'=>$Evenements,'articles'=>$Articles, 'tabCategorie'=>$tabCategorie,'Aimers'=>$Aimers,'_Aimers'=>$_Aimers]);
         }
         else{
             return view('accueil',['evenements'=>$Evenements,'articles'=>$Articles, 'tabCategorie'=>$tabCategorie]);

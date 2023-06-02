@@ -759,7 +759,6 @@ section {
 # About Boxes
 --------------------------------------------------------------*/
 .about-boxes {
-  background: url("../img/about-boxes-bg.jpg") center top no-repeat fixed;
   background-size: cover;
   padding: 60px 0 30px 0;
   position: relative;
@@ -1285,6 +1284,23 @@ section {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
+
+
+/*------------------
+# Mobile article
+--------------------*/
+@media (max-width: 767px) {
+  .portfolio .portfolio-item img {
+    top: -30px;
+  }
+  
+  .portfolio .portfolio-item .portfolio-info {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # Team
